@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PoINFO</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+		<link rel="stylesheet" href="vendor/waves/waves.min.css" />
+		<link rel="stylesheet" href="vendor/wow/animate.css" />
+		<link rel="stylesheet" href="css/nativedroid2.css" />
+
+		<meta name="mobile-web-app-capable" content="yes">
+	 	<meta name="apple-mobile-web-app-capable" content="yes" />
+    		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;">
+
+
+	</head>
+	<body>
+
+		<div data-role="page" id="page_newsighting">
+
+			<nd2-include data-src="fragments/panel.left.html"></nd2-include>
+
+			<div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom' data-display="overlay">
+				<nd2-include data-src="fragments/bottom.sheet.html"></nd2-include>
+			</div>
+
+			<div data-role="header" data-position="fixed" class="wow fadeInDown">
+				<a href="#bottomsheet" class="ui-btn ui-btn-right wow fadeIn"><i class="zmdi zmdi-more-vert"></i></a>
+				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn"><i class="zmdi zmdi-menu"></i></a>
+				<h1 class="wow fadeIn">New sighting</h1>
+			</div>
+
+			<div role="main" class="ui-content" data-inset="false">
+				<form class="form-horizontal" onsubmit="return false;" id="newsighting_form" action="error.html">
+				<fieldset>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="newsighting_lat">Latitude</label>  
+				  <div class="col-md-4">
+				  <input id="newsighting_lat" name="newsighting_lat" type="text" placeholder="" class="form-control input-md input-latitude">
+    
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="newsighting_lon">Longitude</label>  
+				  <div class="col-md-4">
+				  <input id="newsighting_lon" name="newsighting_lon" type="text" placeholder="" class="form-control input-md input-longitude">
+    
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="newsighting_accuracy">Accuracy</label>  
+				  <div class="col-md-4">
+				  <input id="newsighting_accuracy" name="newsighting_accuracy" type="text" placeholder="" class="form-control input-md input-accuracy">
+    
+				  </div>
+				</div>
+				<br />
+				<!-- Button -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="newsighting_addphoto"></label>
+				  <div class="col-md-4">
+				    <button id="newsighting_addphoto" name="newsighting_addphoto" class="btn btn-primary" onclick="takephoto('new');">Take Photo</button>
+				  <input id="newsighting_photourl" name="newsighting_photourl" type="hidden">
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="newsighting_reg">Reg</label>  
+				  <div class="col-md-4">
+				  <input id="newsighting_reg" name="newsighting_reg" type="text" placeholder="" class="form-control input-md">
+    
+				  </div>
+				</div>
+
+				<!-- Textarea -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="newsighting_notes">Notes</label>
+				  <div class="col-md-4">                     
+				    <textarea class="form-control" id="newsighting_notes" name="newsighting_notes"></textarea>
+				  </div>
+				</div>
+
+				<!-- Button (Double) -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="newsighting_submit"></label>
+				  <div class="col-md-8">
+				    <button onclick="newsighting_submit();" class="btn btn-success">Submit</button>
+				    <button type="button" onclick="$('#newsighting_form')[0].reset();" id="newsighting_reset" name="newsighting_reset" class="btn btn-danger">Reset</button>
+				  </div>
+				</div>
+
+				</fieldset>
+				</form>
+
+			</div>
+
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/jquery.mobile.min.js"></script>
+		<script src="vendor/waves/waves.min.js"></script>
+		<script src="vendor/wow/wow.min.js"></script>
+		<script src="js/nativedroid2.js"></script>
+		<script src="nd2settings.js"></script>
+
+
+
+	       <script type="text/javascript" src="cordova.js"></script>
+	       <script type="text/javascript" src="js/index.js"></script>
+	       <script src="http://192.168.0.10:8080/target/target-script-min.js#anonymous"></script>
+
+	</body>
+</html>

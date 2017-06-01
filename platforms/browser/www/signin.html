@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Signin</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+		<link rel="stylesheet" href="vendor/waves/waves.min.css" />
+		<link rel="stylesheet" href="vendor/wow/animate.css" />
+		<link rel="stylesheet" href="css/nativedroid2.css" />
+
+		<meta name="mobile-web-app-capable" content="yes">
+	 	<meta name="apple-mobile-web-app-capable" content="yes" />
+    		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;">
+
+
+	</head>
+	<body>
+
+		<div data-role="page" id="page_signin">
+			<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+				<h1 class="wow fadeIn" data-wow-delay='0.4s'>Sign in</h1>
+			</div>
+
+			<div role="main" class="ui-content" data-inset="false">
+				<form class="form-horizontal" onsubmit="console.log('signin submitted');signin();return false;" id="signin_form">
+				<fieldset>
+
+				<!-- Form Name -->
+				<legend>Sign in</legend>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-12 control-label" for="signin_email">Email</label>  
+				  <div class="col-md-12">
+				  <input id="signin_email" name="signin_email" type="email" placeholder="" class="form-control input-md" required="">
+    
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-12 control-label" for="signin_launchkey">Launchkey</label>  
+				  <div class="col-md-12">
+				  <input id="signin_launchkey" name="signin_launchkey" type="text" placeholder="" class="form-control input-md" required="">
+    
+				  </div>
+				</div>
+
+				<!-- Password input-->
+				<div class="form-group">
+				  <label class="col-md-12 control-label" for="signin_password">Password</label>
+				  <div class="col-md-12">
+				    <input id="signin_password" name="signin_password" type="password" placeholder="" class="form-control input-md" required="">
+    
+				  </div>
+				</div>
+  	        	        
+				<button id="signin_submit" name="signin_submit" class="btn btn-success">Sign in</button>
+				<button type="button" id="signin_resetform" name="signin_resetform" class="btn btn-danger" onclick="$('#signin_form')[0].reset();">Cancel</button>
+
+				</fieldset>
+				</form>
+			</div>
+
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/jquery.mobile.min.js"></script>
+		<script src="vendor/waves/waves.min.js"></script>
+		<script src="vendor/wow/wow.min.js"></script>
+		<script src="js/nativedroid2.js"></script>
+		<script src="nd2settings.js"></script>
+
+
+
+	       <script type="text/javascript" src="cordova.js"></script>
+	       <script type="text/javascript" src="js/index.js"></script>
+	       <script src="http://192.168.0.10:8080/target/target-script-min.js#anonymous"></script>
+
+	</body>
+</html>
