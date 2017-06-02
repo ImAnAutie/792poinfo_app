@@ -253,10 +253,23 @@ function syncsend() {
 
 
 	$.post( "https://project792.okonetwork.org.uk/api/poinfo/sightingsubmit", { jwt: localStorage.jwt, sighting: JSON.stringify(JSON.parse(localStorage.sightings)[0]), imagedata: imagedata }).done(function(data) {
-		sightings=JSON.parse(localStorage.sightings);
-		sightings.splice(0, 1);
-		localStorage.sightings=JSON.stringify(sightings);
-		sync();
+		try {
+			data=JSON.parse(data);
+		} finally {
+			console.log("Checking data result");
+		};
+
+		console.log(data);
+		if (!data.result) {
+			console.log(data);
+			$.mobile.loading("hide");
+			alert("Error communicating with server. Received unexpected response. Please check network connection.");		
+		} else {
+			sightings=JSON.parse(localStorage.sightings);
+			sightings.splice(0, 1);
+			localStorage.sightings=JSON.stringify(sightings);
+			sync();
+		};
 	}).error(function(error) {
 		console.log(error);
 		$.mobile.loading("hide");
