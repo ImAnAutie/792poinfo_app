@@ -254,7 +254,7 @@ function syncsend() {
 
 	$.post( "https://project792.okonetwork.org.uk/api/poinfo/sightingsubmit", { jwt: localStorage.jwt, sighting: JSON.stringify(JSON.parse(localStorage.sightings)[0]), imagedata: imagedata }).done(function(data) {
 		console.log(data);
-		if (!data.result) {
+		if (!data.status) {
 			console.log(data);
 			$.mobile.loading("hide");
 			alert("Error communicating with server. Received unexpected response. Please check network connection.");		
