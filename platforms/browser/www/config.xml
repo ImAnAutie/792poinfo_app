@@ -6,9 +6,9 @@
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>PoINFO-Project 792</name>
+    <name>PoINFO</name>
     <description>
-        Project 792 PoINFO police vehicle database
+        Project 792 PoINFO police vehicle sighting reporter app
     </description>
     <author email="gregory+792poinfo@okonetwork.org.uk" href="https://project792.okonetwork.org.uk">
         Hack Force ONE
