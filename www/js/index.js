@@ -253,12 +253,6 @@ function syncsend() {
 
 
 	$.post( "https://project792.okonetwork.org.uk/api/poinfo/sightingsubmit", { jwt: localStorage.jwt, sighting: JSON.stringify(JSON.parse(localStorage.sightings)[0]), imagedata: imagedata }).done(function(data) {
-		try {
-			data=JSON.parse(data);
-		} finally {
-			console.log("Checking data result");
-		};
-
 		console.log(data);
 		if (!data.result) {
 			console.log(data);
